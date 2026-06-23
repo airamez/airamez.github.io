@@ -1,9 +1,265 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>My Site</title>
-  </head>
-  <body>
-    <h1>My page</h1>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jose Santos — Principal Software Engineer</title>
+  <style>
+    :root {
+      --text: #222;
+      --muted: #555;
+      --accent: #1a5276;
+      --border: #ddd;
+      --bg: #fff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    header {
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: var(--accent);
+    }
+    .subtitle {
+      margin: 0.25rem 0 0;
+      font-size: 1rem;
+      color: var(--muted);
+    }
+    .contact a {
+      color: var(--accent);
+      text-decoration: none;
+      margin-right: 1rem;
+    }
+    .contact a:hover { text-decoration: underline; }
+    section { margin-bottom: 1.5rem; }
+    h2 {
+      font-size: 1.25rem;
+      color: var(--accent);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.3rem;
+      margin-bottom: 0.75rem;
+    }
+    h3 {
+      font-size: 1rem;
+      margin: 1rem 0 0.25rem;
+      color: var(--text);
+    }
+    .meta {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+    ul {
+      margin: 0 0 0.75rem 1.25rem;
+      padding: 0;
+    }
+    li { margin-bottom: 0.35rem; }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 0.5rem;
+    }
+    .skill-group strong {
+      color: var(--accent);
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .project-title {
+      font-weight: 600;
+      margin-top: 0.75rem;
+    }
+    @media print {
+      body { font-size: 12pt; }
+      .container { padding: 1rem; }
+      a { text-decoration: none; color: var(--text); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>JOSE SANTOS</h1>
+      <p class="subtitle">Principal Software Engineer</p>
+      <p class="contact">
+        <a href="mailto:airamez@gmail.com">airamez@gmail.com</a>
+        <a href="https://linkedin.com/in/jose-rodrigues-santos">LinkedIn</a>
+        <a href="https://github.com/airamez">GitHub</a>
+      </p>
+    </header>
+
+    <section>
+      <h2>Professional Summary</h2>
+      <p>
+        Principal Software Engineer with 20+ years of experience architecting and delivering high-scale, mission-critical software systems across Fortune 500 companies, government environments, financial platforms, and transportation systems. Expert in .NET, Azure, distributed systems, microservices, cloud-native architecture, big data platforms, Apache Spark, Kafka, Scala, Kotlin, C#, and SQL Server. Proven record leading cross-functional engineering teams, defining scalable system architecture, modernizing legacy platforms, and delivering reliable services that process millions of transactions and events. Strong focus on performance, scalability, reliability, collaboration, mentoring, and engineering excellence.
+      </p>
+    </section>
+
+    <section>
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-group"><strong>Languages:</strong> C#, Java, Kotlin, TypeScript, Scala, T-SQL</div>
+        <div class="skill-group"><strong>Frameworks:</strong> .NET Core, ASP.NET MVC, Web API, Angular, React, GraphQL</div>
+        <div class="skill-group"><strong>Cloud &amp; Data:</strong> Microsoft Azure, Apache Spark, Kafka, Redis, cloud-native services, big data platforms</div>
+        <div class="skill-group"><strong>Databases &amp; Reporting:</strong> SQL Server, PostgreSQL, T-SQL, SSRS, business intelligence reporting</div>
+        <div class="skill-group"><strong>Messaging &amp; Observability:</strong> RabbitMQ, Logstash, Graylog, IBM MQ, distributed messaging, logging pipelines</div>
+        <div class="skill-group"><strong>Engineering Practices:</strong> Distributed systems, microservices, CI/CD, performance optimization, system design, architecture modernization, technical leadership, mentoring</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Professional Experience</h2>
+
+      <h3>Cubic Transportation Systems — Principal Software Engineer</h3>
+      <p class="meta">Sep 2025 – Present</p>
+      <ul>
+        <li>Architect and deliver CRM-integrated single-page application platforms using .NET MVC, Angular, and React for large-scale metropolitan transit systems.</li>
+        <li>Lead modernization initiatives that transform legacy systems into scalable, maintainable, cloud-ready architectures.</li>
+        <li>Collaborate with distributed engineering teams to improve platform performance, reliability, maintainability, and delivery quality.</li>
+      </ul>
+
+      <h3>Intuit — Staff Software Engineer</h3>
+      <p class="meta">Apr 2024 – Sep 2025</p>
+      <ul>
+        <li>Engineered cloud-native services using Kotlin, GraphQL, and Kafka to support financial platform modernization.</li>
+        <li>Designed event-driven architectures processing 2M+ business transactions daily while meeting strict latency and reliability requirements.</li>
+        <li>Owned end-to-end implementation and production onboarding of the Business Transaction ingestion layer for QuickBooks modernization services.</li>
+      </ul>
+
+      <h3>Microsoft — Principal Software Engineer</h3>
+      <p class="meta">Aug 2022 – Apr 2024</p>
+      <ul>
+        <li>Led teams of 6–10 engineers delivering Azure-based big data platforms using Apache Spark and Scala.</li>
+        <li>Defined architecture for batch and real-time streaming pipelines handling large-scale enterprise datasets.</li>
+        <li>Designed sovereign cloud onboarding strategy enabling secure migration of government workloads.</li>
+        <li>Coordinated multi-region engineering activities to deliver highly available cloud systems.</li>
+      </ul>
+
+      <h3>Cubic Transportation Systems — Principal Software Engineer</h3>
+      <p class="meta">Jan 2017 – Aug 2022</p>
+      <ul>
+        <li>Architected a high-throughput logging platform processing millions of events per hour using C# and distributed messaging systems.</li>
+        <li>Integrated Kafka, Logstash, and Graylog pipelines for scalable data ingestion and observability.</li>
+        <li>Led Angular modernization from version 4 to version 6 and developed reusable enterprise UI components.</li>
+        <li>Designed performance validation systems supporting 1,250 concurrent users and 200K+ API calls per hour.</li>
+        <li>Mentored engineers and led code quality initiatives that improved maintainability and delivery speed.</li>
+      </ul>
+
+      <h3>Mogo Financial — Senior CRM Engineer</h3>
+      <p class="meta">Feb 2015 – Jan 2017</p>
+      <ul>
+        <li>Designed real-time integration services connecting financial backend systems with Microsoft Dynamics CRM.</li>
+        <li>Implemented event-driven messaging pipelines using RabbitMQ and .NET.</li>
+        <li>Delivered business intelligence and reporting solutions using SQL Server, SSRS, and T-SQL.</li>
+        <li>Developed automation tools that improved operational efficiency and data visibility.</li>
+      </ul>
+
+      <h3>Colliers — Software Engineering Team Lead</h3>
+      <p class="meta">Jan 2013 – Jan 2015</p>
+      <ul>
+        <li>Led a team of 5–7 engineers delivering enterprise CRM solutions aligned with business strategy.</li>
+        <li>Executed large-scale CRM migration from CRM 4 to CRM 2013 with minimal downtime and high data integrity.</li>
+        <li>Developed a real estate platform integrating CRM and Google Maps APIs under aggressive timelines.</li>
+      </ul>
+
+      <h3>CGI — Consultant / Software Developer</h3>
+      <p class="meta">Apr 2012 – Dec 2012</p>
+      <ul>
+        <li>Developed enterprise business intelligence and reporting systems using .NET and SQL Server.</li>
+        <li>Optimized critical database workloads, reducing execution time from hours to minutes.</li>
+        <li>Built internal tooling for CRM automation and migration processes.</li>
+      </ul>
+
+      <h3>Iomer — Senior Software Developer</h3>
+      <p class="meta">Mar 2011 – Apr 2012</p>
+      <ul>
+        <li>Delivered multiple enterprise CRM and SharePoint integration projects.</li>
+        <li>Designed a data migration framework achieving up to 8x performance improvement over legacy tools.</li>
+      </ul>
+
+      <h3>Sierra Systems — System Analyst</h3>
+      <p class="meta">Aug 2010 – Feb 2011</p>
+      <ul>
+        <li>Developed government tax and financial systems using .NET Windows Forms.</li>
+        <li>Performed system analysis and contributed to critical state-level platforms.</li>
+      </ul>
+
+      <h3>Earlier Career — Brazil</h3>
+      <p class="meta">1994 – 2010</p>
+      <ul>
+        <li>Taught algorithms, data structures, .NET, and database systems as a professor and mentor.</li>
+        <li>Managed 20+ engineers as a technical lead for banking and ERP systems.</li>
+        <li>Designed enterprise platforms that improved operational efficiency across multiple industries.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <ul>
+        <li>Master’s Degree, Information Systems — Federal University of Campina Grande</li>
+        <li>Bachelor’s Degree, Information Technology — Tiradentes University</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Certifications</h2>
+      <ul>
+        <li>Microsoft Certified Technology Specialist (MCTS): .NET Framework 4, Web Applications</li>
+        <li>Microsoft Certified Technology Specialist (MCTS): Accessing Data with Microsoft .NET Framework 4</li>
+        <li>Microsoft Certified Technology Specialist (MCTS): SharePoint 2010, Application Development</li>
+        <li>Microsoft Dynamics CRM 2013 Customization and Configuration (MB2-703)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Volunteer and Open-Source Projects</h2>
+
+      <p class="project-title">GitHub Open-Source Portfolio: <a href="https://github.com/airamez">github.com/airamez</a></p>
+      <ul>
+        <li>Maintains volunteer and open-source projects on GitHub, including software libraries, educational platforms, ERP work, and independent game projects.</li>
+      </ul>
+
+      <p class="project-title">Apyvyra: Open-Source ERP — <a href="https://apyvyra.com">apyvyra.com</a> | <a href="https://github.com/airamez/Apyvyra">GitHub</a></p>
+      <ul>
+        <li>Developed and maintains an open-source ERP platform focused on modular business application capabilities.</li>
+      </ul>
+
+      <p class="project-title">Ze Bomber and Ze Gunner — Unreal Engine Games</p>
+      <ul>
+        <li>Published two Unreal Engine 3D games on Steam, demonstrating independent game development, release management, and creative engineering experience.</li>
+        <li><a href="https://store.steampowered.com/app/3638670/Ze_Bomber">Ze Bomber on Steam</a></li>
+        <li><a href="https://store.steampowered.com/app/4398860/Ze_Gunner">Ze Gunner on Steam</a></li>
+      </ul>
+
+      <p class="project-title">Volunteer Coding Education</p>
+      <ul>
+        <li>YouTube playlists supported by GitHub repositories with 400+ classes teaching coding from zero to Full-Stack.</li>
+        <li><a href="https://codando.live">codando.live</a></li>
+        <li><a href="https://codelearn.live">codelearn.live</a></li>
+      </ul>
+
+      <p class="project-title">C# .NET Graph Library — <a href="https://github.com/airamez/ZeGraphos">ZeGraphos on GitHub</a></p>
+      <ul>
+        <li>Developed a comprehensive C# .NET graph library designed for single-machine memory usage, supporting weighted, unweighted, directed, and undirected graph types.</li>
+        <li>Implemented an interface-first API design with common graph algorithms and operations, including shortest path, maximum flow, minimum spanning tree, graph coloring, and topological sorting.</li>
+        <li>Built unit tests, performance benchmarks, efficient adjacency-list data structures, and NuGet-ready packaging for distribution and consumption.</li>
+      </ul>
+    </section>
+  </div>
+</body>
 </html>
