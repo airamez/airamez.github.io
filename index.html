@@ -1,265 +1,707 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Jose Santos — Principal Software Engineer. Resume and professional experience at Microsoft, Intuit, and Cubic Transportation Systems." />
+  <meta name="author" content="Jose Santos" />
   <title>Jose Santos — Principal Software Engineer</title>
   <style>
     :root {
-      --text: #222;
-      --muted: #555;
-      --accent: #1a5276;
-      --border: #ddd;
-      --bg: #fff;
+      --bg: #f6f7f9;
+      --surface: #ffffff;
+      --text: #1a1d23;
+      --muted: #5c6570;
+      --border: #e2e6eb;
+      --accent: #0b5fff;
+      --accent-soft: #e8f0ff;
+      --chip-bg: #f0f3f7;
+      --max: 860px;
+      --radius: 10px;
+      --shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 8px 24px rgba(16, 24, 40, 0.06);
     }
-    * { box-sizing: border-box; }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      font-size: 15.5px;
+      line-height: 1.55;
       color: var(--text);
       background: var(--bg);
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
+      -webkit-font-smoothing: antialiased;
     }
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
-    header {
-      border-bottom: 2px solid var(--accent);
-      padding-bottom: 1rem;
-      margin-bottom: 1.5rem;
-    }
-    h1 {
-      margin: 0;
-      font-size: 2rem;
-      color: var(--accent);
-    }
-    .subtitle {
-      margin: 0.25rem 0 0;
-      font-size: 1rem;
-      color: var(--muted);
-    }
-    .contact a {
+
+    a {
       color: var(--accent);
       text-decoration: none;
-      margin-right: 1rem;
     }
-    .contact a:hover { text-decoration: underline; }
-    section { margin-bottom: 1.5rem; }
-    h2 {
-      font-size: 1.25rem;
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      max-width: var(--max);
+      margin: 2rem auto;
+      padding: 0 1rem 3rem;
+    }
+
+    header.hero {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 4px);
+      box-shadow: var(--shadow);
+      padding: 2rem 2rem 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem 1.5rem;
+    }
+
+    h1 {
+      margin: 0 0 0.25rem;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .title {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 600;
       color: var(--accent);
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 0.3rem;
-      margin-bottom: 0.75rem;
     }
-    h3 {
-      font-size: 1rem;
-      margin: 1rem 0 0.25rem;
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem 1.1rem;
+      margin-top: 1.15rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.92rem;
+    }
+
+    .contact a {
+      color: var(--muted);
+    }
+
+    .contact a:hover {
+      color: var(--accent);
+    }
+
+    .contact span {
+      color: var(--muted);
+    }
+
+    section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.35rem 1.6rem 1.45rem;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      margin: 0 0 0.9rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.55rem;
+    }
+
+    .summary p {
+      margin: 0;
       color: var(--text);
     }
-    .meta {
+
+    .skills {
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .skill-row {
+      display: grid;
+      grid-template-columns: minmax(140px, 180px) 1fr;
+      gap: 0.5rem 1rem;
+      align-items: start;
+    }
+
+    .skill-label {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text);
+      padding-top: 0.15rem;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .chip {
+      display: inline-block;
+      background: var(--chip-bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 0.82rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      line-height: 1.4;
+    }
+
+    .job {
+      padding: 0.95rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .job:first-of-type {
+      padding-top: 0.15rem;
+    }
+
+    .job:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .job-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.25rem 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .job-company {
+      margin: 0;
+      font-size: 1.02rem;
+      font-weight: 700;
+    }
+
+    .job-role {
+      margin: 0.1rem 0 0;
+      font-weight: 600;
+      color: var(--accent);
+      font-size: 0.95rem;
+    }
+
+    .job-dates {
+      font-size: 0.88rem;
+      color: var(--muted);
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .job-note {
+      margin: 0.35rem 0 0.45rem;
       font-size: 0.9rem;
       color: var(--muted);
-      margin-bottom: 0.5rem;
+      font-style: italic;
     }
+
     ul {
-      margin: 0 0 0.75rem 1.25rem;
-      padding: 0;
+      margin: 0.45rem 0 0;
+      padding-left: 1.15rem;
     }
-    li { margin-bottom: 0.35rem; }
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 0.5rem;
+
+    li {
+      margin-bottom: 0.35rem;
     }
-    .skill-group strong {
-      color: var(--accent);
+
+    li:last-child {
+      margin-bottom: 0;
     }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .project-title {
+
+    .edu-item,
+    .cert-item {
+      margin-bottom: 0.55rem;
+    }
+
+    .edu-item:last-child,
+    .cert-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .edu-degree {
       font-weight: 600;
-      margin-top: 0.75rem;
     }
+
+    .edu-school {
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .cert-item {
+      padding-left: 0.85rem;
+      position: relative;
+    }
+
+    .cert-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .projects-intro {
+      margin: 0 0 1rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .project {
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .project:first-of-type {
+      padding-top: 0;
+    }
+
+    .project:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .project-title {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .project-tag {
+      display: inline-block;
+      margin-left: 0.4rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 0.12rem 0.45rem;
+      border-radius: 999px;
+      vertical-align: middle;
+    }
+
+    .project p {
+      margin: 0.35rem 0 0.4rem;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 0.9rem;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+      padding: 0.5rem;
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        margin-top: 0.75rem;
+      }
+
+      header.hero,
+      section {
+        padding-left: 1.15rem;
+        padding-right: 1.15rem;
+      }
+
+      h1 {
+        font-size: 1.65rem;
+      }
+
+      .skill-row {
+        grid-template-columns: 1fr;
+        gap: 0.3rem;
+      }
+
+      .job-dates {
+        white-space: normal;
+      }
+    }
+
     @media print {
-      body { font-size: 12pt; }
-      .container { padding: 1rem; }
-      a { text-decoration: none; color: var(--text); }
+      body {
+        background: #fff;
+        font-size: 11pt;
+      }
+
+      .page {
+        margin: 0;
+        padding: 0;
+        max-width: none;
+      }
+
+      header.hero,
+      section {
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+        padding: 0.4rem 0 0.6rem;
+        margin-bottom: 0.4rem;
+        break-inside: avoid;
+      }
+
+      header.hero {
+        border-bottom: 1.5px solid #ccc;
+        margin-bottom: 0.6rem;
+      }
+
+      .job,
+      .project {
+        break-inside: avoid;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      footer {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>JOSE SANTOS</h1>
-      <p class="subtitle">Principal Software Engineer</p>
-      <p class="contact">
+  <div class="page">
+    <header class="hero">
+      <div class="hero-top">
+        <div>
+          <h1>Jose Santos</h1>
+          <p class="title">Principal Software Engineer</p>
+        </div>
+      </div>
+      <nav class="contact" aria-label="Contact">
         <a href="mailto:airamez@gmail.com">airamez@gmail.com</a>
-        <a href="https://linkedin.com/in/jose-rodrigues-santos">LinkedIn</a>
-        <a href="https://github.com/airamez">GitHub</a>
-      </p>
+        <a href="https://linkedin.com/in/jose-rodrigues-santos" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/airamez" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://airamez.github.io" target="_blank" rel="noopener noreferrer">airamez.github.io</a>
+      </nav>
     </header>
 
-    <section>
-      <h2>Professional Summary</h2>
+    <section class="summary" id="summary" aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Professional Summary</h2>
       <p>
-        Principal Software Engineer with 20+ years of experience architecting and delivering high-scale, mission-critical software systems across Fortune 500 companies, government environments, financial platforms, and transportation systems. Expert in .NET, Azure, distributed systems, microservices, cloud-native architecture, big data platforms, Apache Spark, Kafka, Scala, Kotlin, C#, and SQL Server. Proven record leading cross-functional engineering teams, defining scalable system architecture, modernizing legacy platforms, and delivering reliable services that process millions of transactions and events. Strong focus on performance, scalability, reliability, collaboration, mentoring, and engineering excellence.
+        Principal Software Engineer with 30+ years designing and delivering high-scale systems at Microsoft, Intuit, and Cubic Transportation Systems. Expertise in Microsoft Azure, event-driven architecture with Apache Kafka, big data with Apache Spark and Scala, and full-stack development with .NET, C#, Kotlin, Angular, and React. Technical leader of engineering teams of 6 to 12 people. Track record modernizing legacy platforms and shipping systems that process millions of transactions and events daily. International career experience across Brazil, Canada, and the United States.
       </p>
     </section>
 
-    <section>
-      <h2>Technical Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-group"><strong>Languages:</strong> C#, Java, Kotlin, TypeScript, Scala, T-SQL</div>
-        <div class="skill-group"><strong>Frameworks:</strong> .NET Core, ASP.NET MVC, Web API, Angular, React, GraphQL</div>
-        <div class="skill-group"><strong>Cloud &amp; Data:</strong> Microsoft Azure, Apache Spark, Kafka, Redis, cloud-native services, big data platforms</div>
-        <div class="skill-group"><strong>Databases &amp; Reporting:</strong> SQL Server, PostgreSQL, T-SQL, SSRS, business intelligence reporting</div>
-        <div class="skill-group"><strong>Messaging &amp; Observability:</strong> RabbitMQ, Logstash, Graylog, IBM MQ, distributed messaging, logging pipelines</div>
-        <div class="skill-group"><strong>Engineering Practices:</strong> Distributed systems, microservices, CI/CD, performance optimization, system design, architecture modernization, technical leadership, mentoring</div>
+    <section id="skills" aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Technical Skills</h2>
+      <div class="skills">
+        <div class="skill-row">
+          <div class="skill-label">Languages</div>
+          <div class="chips">
+            <span class="chip">C#</span>
+            <span class="chip">Kotlin</span>
+            <span class="chip">Java</span>
+            <span class="chip">Scala</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">TypeScript</span>
+            <span class="chip">Python</span>
+            <span class="chip">T-SQL</span>
+            <span class="chip">SQL</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-label">Backend</div>
+          <div class="chips">
+            <span class="chip">.NET Core</span>
+            <span class="chip">ASP.NET MVC</span>
+            <span class="chip">ASP.NET Web API</span>
+            <span class="chip">GraphQL</span>
+            <span class="chip">Microservices</span>
+            <span class="chip">REST APIs</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-label">Frontend</div>
+          <div class="chips">
+            <span class="chip">Angular</span>
+            <span class="chip">React</span>
+            <span class="chip">SPA</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-label">Cloud</div>
+          <div class="chips">
+            <span class="chip">Microsoft Azure</span>
+            <span class="chip">Cloud-native architecture</span>
+            <span class="chip">Sovereign cloud</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-label">Data &amp; Streaming</div>
+          <div class="chips">
+            <span class="chip">Apache Spark</span>
+            <span class="chip">Apache Kafka</span>
+            <span class="chip">Redis</span>
+            <span class="chip">Batch processing</span>
+            <span class="chip">Real-time streaming</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-label">Databases</div>
+          <div class="chips">
+            <span class="chip">SQL Server</span>
+            <span class="chip">PostgreSQL</span>
+            <span class="chip">T-SQL</span>
+            <span class="chip">SSRS</span>
+            <span class="chip">Business intelligence</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-label">Messaging &amp; Observability</div>
+          <div class="chips">
+            <span class="chip">RabbitMQ</span>
+            <span class="chip">IBM MQ</span>
+            <span class="chip">Logstash</span>
+            <span class="chip">Graylog</span>
+            <span class="chip">Distributed messaging</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-label">Practices</div>
+          <div class="chips">
+            <span class="chip">Distributed systems</span>
+            <span class="chip">System design</span>
+            <span class="chip">CI/CD</span>
+            <span class="chip">Performance optimization</span>
+            <span class="chip">Architecture modernization</span>
+            <span class="chip">Technical leadership</span>
+            <span class="chip">Mentoring</span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section>
-      <h2>Professional Experience</h2>
+    <section id="experience" aria-labelledby="experience-heading">
+      <h2 id="experience-heading">Professional Experience</h2>
 
-      <h3>Cubic Transportation Systems — Principal Software Engineer</h3>
-      <p class="meta">Sep 2025 – Present</p>
-      <ul>
-        <li>Architect and deliver CRM-integrated single-page application platforms using .NET MVC, Angular, and React for large-scale metropolitan transit systems.</li>
-        <li>Lead modernization initiatives that transform legacy systems into scalable, maintainable, cloud-ready architectures.</li>
-        <li>Collaborate with distributed engineering teams to improve platform performance, reliability, maintainability, and delivery quality.</li>
-      </ul>
+      <article class="job">
+        <div class="job-header">
+          <div>
+            <h3 class="job-company">Cubic Transportation Systems</h3>
+            <p class="job-role">Principal Software Engineer (Second Tenure)</p>
+          </div>
+          <div class="job-dates">September 2025 – Present</div>
+        </div>
+        <p class="job-note">Returned to Cubic after Microsoft and Intuit. Separate employment period from first tenure below.</p>
+        <ul>
+          <li>Architect CRM-integrated single-page application platforms using .NET MVC, Angular, and React for large-scale metropolitan transit systems.</li>
+          <li>Lead modernization initiatives that transform legacy transit software into scalable, maintainable, cloud-ready architectures.</li>
+          <li>Collaborate with distributed engineering teams to improve platform performance, reliability, maintainability, and delivery quality.</li>
+        </ul>
+      </article>
 
-      <h3>Intuit — Staff Software Engineer</h3>
-      <p class="meta">Apr 2024 – Sep 2025</p>
-      <ul>
-        <li>Engineered cloud-native services using Kotlin, GraphQL, and Kafka to support financial platform modernization.</li>
-        <li>Designed event-driven architectures processing 2M+ business transactions daily while meeting strict latency and reliability requirements.</li>
-        <li>Owned end-to-end implementation and production onboarding of the Business Transaction ingestion layer for QuickBooks modernization services.</li>
-      </ul>
+      <article class="job">
+        <div class="job-header">
+          <div>
+            <h3 class="job-company">Intuit</h3>
+            <p class="job-role">Staff Software Engineer</p>
+          </div>
+          <div class="job-dates">April 2024 – September 2025</div>
+        </div>
+        <ul>
+          <li>Owned end-to-end design, implementation, and production onboarding of the Business Transaction ingestion layer for QuickBooks modernization services.</li>
+          <li>Built cloud-native event-driven services using Kotlin, GraphQL, and Apache Kafka processing more than 2 million business transactions daily under strict latency and reliability requirements.</li>
+          <li>Partnered across platform teams to harden ingestion paths, improve operability, and support large-scale financial platform modernization.</li>
+        </ul>
+      </article>
 
-      <h3>Microsoft — Principal Software Engineer</h3>
-      <p class="meta">Aug 2022 – Apr 2024</p>
-      <ul>
-        <li>Led teams of 6–10 engineers delivering Azure-based big data platforms using Apache Spark and Scala.</li>
-        <li>Defined architecture for batch and real-time streaming pipelines handling large-scale enterprise datasets.</li>
-        <li>Designed sovereign cloud onboarding strategy enabling secure migration of government workloads.</li>
-        <li>Coordinated multi-region engineering activities to deliver highly available cloud systems.</li>
-      </ul>
+      <article class="job">
+        <div class="job-header">
+          <div>
+            <h3 class="job-company">Microsoft</h3>
+            <p class="job-role">Principal Software Engineer</p>
+          </div>
+          <div class="job-dates">August 2022 – April 2024</div>
+        </div>
+        <ul>
+          <li>Led teams of 6 to 12 engineers delivering Azure-based big data platforms using Apache Spark and Scala for enterprise-scale workloads.</li>
+          <li>Defined architecture for batch and real-time streaming data pipelines handling large multi-tenant enterprise datasets.</li>
+          <li>Designed and implemented sovereign cloud onboarding strategy enabling secure migration of government workloads onto Microsoft Azure.</li>
+          <li>Coordinated multi-region engineering delivery for highly available cloud systems used by enterprise and public-sector customers.</li>
+        </ul>
+      </article>
 
-      <h3>Cubic Transportation Systems — Principal Software Engineer</h3>
-      <p class="meta">Jan 2017 – Aug 2022</p>
-      <ul>
-        <li>Architected a high-throughput logging platform processing millions of events per hour using C# and distributed messaging systems.</li>
-        <li>Integrated Kafka, Logstash, and Graylog pipelines for scalable data ingestion and observability.</li>
-        <li>Led Angular modernization from version 4 to version 6 and developed reusable enterprise UI components.</li>
-        <li>Designed performance validation systems supporting 1,250 concurrent users and 200K+ API calls per hour.</li>
-        <li>Mentored engineers and led code quality initiatives that improved maintainability and delivery speed.</li>
-      </ul>
+      <article class="job">
+        <div class="job-header">
+          <div>
+            <h3 class="job-company">Cubic Transportation Systems</h3>
+            <p class="job-role">Principal Software Engineer (First Tenure)</p>
+          </div>
+          <div class="job-dates">January 2017 – August 2022</div>
+        </div>
+        <p class="job-note">First employment period at Cubic. Left in August 2022 to join Microsoft.</p>
+        <ul>
+          <li>Architected a high-throughput logging and observability platform processing millions of events per hour using C#, distributed messaging, Apache Kafka, Logstash, and Graylog.</li>
+          <li>Designed performance validation systems to support 1,250 concurrent users and more than 200,000 API calls per hour.</li>
+          <li>Led Angular modernization from version 4 to version 12 and developed reusable enterprise UI component libraries adopted across product teams.</li>
+          <li>Mentored engineers and led code quality initiatives that improved maintainability and delivery speed.</li>
+        </ul>
+      </article>
 
-      <h3>Mogo Financial — Senior CRM Engineer</h3>
-      <p class="meta">Feb 2015 – Jan 2017</p>
-      <ul>
-        <li>Designed real-time integration services connecting financial backend systems with Microsoft Dynamics CRM.</li>
-        <li>Implemented event-driven messaging pipelines using RabbitMQ and .NET.</li>
-        <li>Delivered business intelligence and reporting solutions using SQL Server, SSRS, and T-SQL.</li>
-        <li>Developed automation tools that improved operational efficiency and data visibility.</li>
-      </ul>
+      <article class="job">
+        <div class="job-header">
+          <div>
+            <h3 class="job-company">Mogo Financial</h3>
+            <p class="job-role">Senior CRM Engineer</p>
+          </div>
+          <div class="job-dates">February 2015 – January 2017</div>
+        </div>
+        <ul>
+          <li>Designed real-time integration services connecting financial backend systems with Microsoft Dynamics CRM using .NET and RabbitMQ.</li>
+          <li>Delivered business intelligence and reporting solutions using SQL Server, SSRS, and T-SQL, plus automation tools that improved operational visibility.</li>
+        </ul>
+      </article>
 
-      <h3>Colliers — Software Engineering Team Lead</h3>
-      <p class="meta">Jan 2013 – Jan 2015</p>
-      <ul>
-        <li>Led a team of 5–7 engineers delivering enterprise CRM solutions aligned with business strategy.</li>
-        <li>Executed large-scale CRM migration from CRM 4 to CRM 2013 with minimal downtime and high data integrity.</li>
-        <li>Developed a real estate platform integrating CRM and Google Maps APIs under aggressive timelines.</li>
-      </ul>
+      <article class="job">
+        <div class="job-header">
+          <div>
+            <h3 class="job-company">Colliers</h3>
+            <p class="job-role">Software Engineering Team Lead</p>
+          </div>
+          <div class="job-dates">January 2013 – January 2015</div>
+        </div>
+        <ul>
+          <li>Led a team of 5 to 7 engineers delivering enterprise CRM solutions aligned with business strategy.</li>
+          <li>Executed large-scale Microsoft Dynamics CRM migration from CRM 4 to CRM 2013 with minimal downtime and high data integrity.</li>
+          <li>Developed a real estate platform integrating CRM and Google Maps APIs under aggressive delivery timelines.</li>
+        </ul>
+      </article>
 
-      <h3>CGI — Consultant / Software Developer</h3>
-      <p class="meta">Apr 2012 – Dec 2012</p>
-      <ul>
-        <li>Developed enterprise business intelligence and reporting systems using .NET and SQL Server.</li>
-        <li>Optimized critical database workloads, reducing execution time from hours to minutes.</li>
-        <li>Built internal tooling for CRM automation and migration processes.</li>
-      </ul>
-
-      <h3>Iomer — Senior Software Developer</h3>
-      <p class="meta">Mar 2011 – Apr 2012</p>
-      <ul>
-        <li>Delivered multiple enterprise CRM and SharePoint integration projects.</li>
-        <li>Designed a data migration framework achieving up to 8x performance improvement over legacy tools.</li>
-      </ul>
-
-      <h3>Sierra Systems — System Analyst</h3>
-      <p class="meta">Aug 2010 – Feb 2011</p>
-      <ul>
-        <li>Developed government tax and financial systems using .NET Windows Forms.</li>
-        <li>Performed system analysis and contributed to critical state-level platforms.</li>
-      </ul>
-
-      <h3>Earlier Career — Brazil</h3>
-      <p class="meta">1994 – 2010</p>
-      <ul>
-        <li>Taught algorithms, data structures, .NET, and database systems as a professor and mentor.</li>
-        <li>Managed 20+ engineers as a technical lead for banking and ERP systems.</li>
-        <li>Designed enterprise platforms that improved operational efficiency across multiple industries.</li>
-      </ul>
+      <article class="job">
+        <div class="job-header">
+          <div>
+            <h3 class="job-company">Earlier Career (CGI, Iomer, Sierra Systems, Brazil)</h3>
+            <p class="job-role">Technical Lead / Software Engineer / Professor</p>
+          </div>
+          <div class="job-dates">1994 – 2012</div>
+        </div>
+        <ul>
+          <li><strong>CGI, Iomer, and Sierra Systems (Canada, 2010–2012):</strong> delivered enterprise business intelligence, CRM and SharePoint integrations, and government tax and financial systems using .NET and SQL Server; built a data migration framework with up to 8x performance improvement; optimized database workloads from hours to minutes.</li>
+          <li><strong>Brazil (1994–2010):</strong> technical lead managing more than 20 engineers on banking and ERP platforms; university professor teaching algorithms, data structures, .NET, and database systems.</li>
+        </ul>
+      </article>
     </section>
 
-    <section>
-      <h2>Education</h2>
-      <ul>
-        <li>Master’s Degree, Information Systems — Federal University of Campina Grande</li>
-        <li>Bachelor’s Degree, Information Technology — Tiradentes University</li>
-      </ul>
+    <section id="education" aria-labelledby="education-heading">
+      <h2 id="education-heading">Education</h2>
+      <div class="edu-item">
+        <div class="edu-degree">Master of Science, Information Systems</div>
+        <div class="edu-school">Federal University of Campina Grande (UFCG), Brazil</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-degree">Bachelor of Science, Information Technology</div>
+        <div class="edu-school">Tiradentes University, Brazil</div>
+      </div>
     </section>
 
-    <section>
-      <h2>Certifications</h2>
-      <ul>
-        <li>Microsoft Certified Technology Specialist (MCTS): .NET Framework 4, Web Applications</li>
-        <li>Microsoft Certified Technology Specialist (MCTS): Accessing Data with Microsoft .NET Framework 4</li>
-        <li>Microsoft Certified Technology Specialist (MCTS): SharePoint 2010, Application Development</li>
-        <li>Microsoft Dynamics CRM 2013 Customization and Configuration (MB2-703)</li>
-      </ul>
+    <section id="certifications" aria-labelledby="certifications-heading">
+      <h2 id="certifications-heading">Certifications</h2>
+      <div class="cert-item">Microsoft Certified Technology Specialist (MCTS): .NET Framework 4, Web Applications</div>
+      <div class="cert-item">Microsoft Certified Technology Specialist (MCTS): Accessing Data with Microsoft .NET Framework 4</div>
+      <div class="cert-item">Microsoft Certified Technology Specialist (MCTS): SharePoint 2010, Application Development</div>
+      <div class="cert-item">Microsoft Dynamics CRM 2013 Customization and Configuration (MB2-703)</div>
     </section>
 
-    <section>
-      <h2>Volunteer and Open-Source Projects</h2>
+    <section id="projects" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Projects</h2>
+      <p class="projects-intro">
+        Multiple open source and free projects.
+        See the full list on
+        <a href="https://github.com/airamez?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub repositories</a>.
+      </p>
 
-      <p class="project-title">GitHub Open-Source Portfolio: <a href="https://github.com/airamez">github.com/airamez</a></p>
-      <ul>
-        <li>Maintains volunteer and open-source projects on GitHub, including software libraries, educational platforms, ERP work, and independent game projects.</li>
-      </ul>
+      <article class="project">
+        <h3 class="project-title">Lang4All <span class="project-tag">Open Source</span></h3>
+        <p>Free web platform to learn new languages through vocabulary, dialogs and quizzes.</p>
+        <div class="project-links">
+          <a href="https://lang4all.com" target="_blank" rel="noopener noreferrer">lang4all.com</a>
+        </div>
+      </article>
 
-      <p class="project-title">Apyvyra: Open-Source ERP — <a href="https://apyvyra.com">apyvyra.com</a> | <a href="https://github.com/airamez/Apyvyra">GitHub</a></p>
-      <ul>
-        <li>Developed and maintains an open-source ERP platform focused on modular business application capabilities.</li>
-      </ul>
+      <article class="project">
+        <h3 class="project-title">Linux-Helper <span class="project-tag">Free App</span></h3>
+        <p>Quick Linux command helper over HTTP — made for curl.</p>
+        <div class="project-links">
+          <a href="https://linux-helper.com" target="_blank" rel="noopener noreferrer">linux-helper.com</a>
+        </div>
+      </article>
 
-      <p class="project-title">Ze Bomber and Ze Gunner — Unreal Engine Games</p>
-      <ul>
-        <li>Published two Unreal Engine 3D games on Steam, demonstrating independent game development, release management, and creative engineering experience.</li>
-        <li><a href="https://store.steampowered.com/app/3638670/Ze_Bomber">Ze Bomber on Steam</a></li>
-        <li><a href="https://store.steampowered.com/app/4398860/Ze_Gunner">Ze Gunner on Steam</a></li>
-      </ul>
+      <article class="project">
+        <h3 class="project-title">ZeGraphos <span class="project-tag">Open Source</span></h3>
+        <p>
+          C# .NET graph library supporting weighted, unweighted, directed, and undirected graphs. Implements shortest path, maximum flow, minimum spanning tree, graph coloring, and topological sorting. Interface-first API design with unit tests, performance benchmarks, and NuGet-ready packaging (NuGet: ZeGraphos).
+        </p>
+        <div class="project-links">
+          <a href="https://github.com/airamez/ZeGraphos" target="_blank" rel="noopener noreferrer">github.com/airamez/ZeGraphos</a>
+        </div>
+      </article>
 
-      <p class="project-title">Volunteer Coding Education</p>
-      <ul>
-        <li>YouTube playlists supported by GitHub repositories with 400+ classes teaching coding from zero to Full-Stack.</li>
-        <li><a href="https://codando.live">codando.live</a></li>
-        <li><a href="https://codelearn.live">codelearn.live</a></li>
-      </ul>
+      <article class="project">
+        <h3 class="project-title">Volunteer Coding Education <span class="project-tag">Community</span></h3>
+        <p>Published more than 400 free classes teaching software engineering from beginner to full stack.</p>
+        <div class="project-links">
+          <a href="https://codando.live" target="_blank" rel="noopener noreferrer">codando.live</a>
+          <a href="https://codelearn.live" target="_blank" rel="noopener noreferrer">codelearn.live</a>
+        </div>
+      </article>
 
-      <p class="project-title">C# .NET Graph Library — <a href="https://github.com/airamez/ZeGraphos">ZeGraphos on GitHub</a></p>
-      <ul>
-        <li>Developed a comprehensive C# .NET graph library designed for single-machine memory usage, supporting weighted, unweighted, directed, and undirected graph types.</li>
-        <li>Implemented an interface-first API design with common graph algorithms and operations, including shortest path, maximum flow, minimum spanning tree, graph coloring, and topological sorting.</li>
-        <li>Built unit tests, performance benchmarks, efficient adjacency-list data structures, and NuGet-ready packaging for distribution and consumption.</li>
-      </ul>
+      <article class="project">
+        <h3 class="project-title">Apyvyra <span class="project-tag">Open-Source ERP</span></h3>
+        <p>Open-source modular ERP platform focused on business application capabilities.</p>
+        <div class="project-links">
+          <a href="https://apyvyra.com" target="_blank" rel="noopener noreferrer">apyvyra.com</a>
+          <a href="https://github.com/airamez/Apyvyra" target="_blank" rel="noopener noreferrer">github.com/airamez/Apyvyra</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <h3 class="project-title">Ze Bomber and Ze Gunner <span class="project-tag">Independent Games</span></h3>
+        <p>Two Unreal Engine 3D games published on Steam, covering full product development and release management.</p>
+        <div class="project-links">
+          <a href="https://store.steampowered.com/app/3638670/Ze_Bomber" target="_blank" rel="noopener noreferrer">Ze Bomber on Steam</a>
+          <a href="https://store.steampowered.com/app/4398860/Ze_Gunner" target="_blank" rel="noopener noreferrer">Ze Gunner on Steam</a>
+        </div>
+      </article>
     </section>
+
+    <footer>
+      Jose Santos · Principal Software Engineer
+    </footer>
   </div>
 </body>
 </html>
